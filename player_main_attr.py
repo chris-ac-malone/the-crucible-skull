@@ -1,4 +1,4 @@
-class Player:
+class PlayerAttr:
     ###Member Variables###
     __name = ""
     __level = 0
@@ -31,4 +31,3 @@ class Player:
     def getManaMax()
     def setManaMax()
 
-    
