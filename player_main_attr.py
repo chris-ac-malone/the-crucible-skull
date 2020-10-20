@@ -1,4 +1,9 @@
 class PlayerAttr:
+    ###Constructor###
+    def __init__(self, name, level):
+        self.name = name
+        self.level = level
+
     ###Member Variables###
     __name = "Theosys"
     __level = 0
@@ -10,40 +15,42 @@ class PlayerAttr:
     manaCurent = 0
 
     ###Methods###
-    def getName():
-        return __name
-    def setName(newName):
-        __name = newName
+    def getName(self):
+        return self.__name
+    def setName(self, newName):
+        self.__name = newName
 
-    def getLevel():
-        return __level
-    def setLevel(newLevel):
-        __level = newLevel
+    def getLevel(self):
+        return self.__level
+    def setLevel(self, newLevel):
+        self.__level = newLevel
 
-    def getExpCurrent():
-        return __expCurrent
-    def setExpCurrent(newExpCurrent):
-        __expCurrent = newExpCurrent
-    def getExpNeed():
-        return __expNeed
-    def setExpNeed(newExpNeed):
-        __expNeed = newExpNeed
+    def getExpCurrent(self):
+        return self.__expCurrent
+    def setExpCurrent(self, newExpCurrent):
+        self.__expCurrent = newExpCurrent
+    def getExpNeed(self):
+        return self.__expNeed
+    def setExpNeed(self, newExpNeed):
+        self.__expNeed = newExpNeed
 
-    def getHealthCurrent():
-        return healthCurrent
-    def setHealthCurrent(newHealthCurrent):
-        healthCurrent = newHealthCurrent
-    def getHealthMax():
-        return __healthMax
-    def setHealthMax(newHealthMax):
-        __healthMax = newHealthMax
+    def getHealthCurrent(self):
+        return self.healthCurrent
+    def setHealthCurrent(self, newHealthCurrent):
+        self.healthCurrent = newHealthCurrent
+    def getHealthMax(self):
+        return self.__healthMax
+    def setHealthMax(self, newHealthMax):
+        self.__healthMax = newHealthMax
 
-    def getManaCurrent():
-        return manaCurent
-    def setManaCurrent(newManaCurrent):
-        manaCurrent = newManaCurrent
-    def getManaMax():
-        return __manaMax
-    def setManaMax(newManaMax):
-        __manaMax = newManaMax
+    def getManaCurrent(self):
+        return self.manaCurent
+    def setManaCurrent(self, newManaCurrent):
+        self.manaCurrent = newManaCurrent
+    def getManaMax(self):
+        return self.__manaMax
+    def setManaMax(self, newManaMax):
+        self.__manaMax = newManaMax
 
+    def debugDisplay(self):
+        print(self.name, self.level)
