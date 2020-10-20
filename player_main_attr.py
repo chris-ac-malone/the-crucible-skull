@@ -1,3 +1,5 @@
+import player_main_stats as stats
+
 class PlayerAttr:
     ###Constructor###
     def __init__(self, name, level):
@@ -13,6 +15,7 @@ class PlayerAttr:
     healthCurrent = 0
     __manaMax = 0
     manaCurent = 0
+    __playerStats = stats.PlayerStats()
 
     ###Methods###
     def getName(self):
@@ -51,6 +54,10 @@ class PlayerAttr:
         return self.__manaMax
     def setManaMax(self, newManaMax):
         self.__manaMax = newManaMax
+
+    def getPlayerStats(self):
+        return self.__playerStats
+    # def setPlayerStats(self...)
 
     def debugDisplay(self):
         print(self.name, self.level)
