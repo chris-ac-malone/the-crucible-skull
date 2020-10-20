@@ -1,6 +1,6 @@
 class PlayerAttr:
     ###Member Variables###
-    __name = ""
+    __name = "Theosys"
     __level = 0
     __expCurrent = 0
     __expNeed = 0
