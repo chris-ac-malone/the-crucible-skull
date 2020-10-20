@@ -1,4 +1,4 @@
-# The Cruc
+# The Crucible Skull
 
 0.1 Documentation
   SRS: https://docs.google.com/document/d/1gjuAy7RAs7r-5mEQ0Hn5NKIT7t3Qu7E4iifMy0mJvGw/edit?usp=sharing
