@@ -8,3 +8,5 @@
 class Party:
     def __init__(self):
         pass
+    def test():
+        print("testing")

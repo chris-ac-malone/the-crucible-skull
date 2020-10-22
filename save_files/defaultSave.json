@@ -19,6 +19,21 @@
         "intelligence":10,
         "charisma":10,
         "speed":10
+        },
+    "equipment":
+        {"head":"x",
+        "torso":"x",
+        "arms":"linen wraps",
+        "legs":"trousers",
+        "lHand":"x",
+        "rHand":"x"
+        },
+    "inventory":
+        {"0":"x",
+        "1":"x",
+        "2":"x",
+        "3":"x",
+        "4":"x"
         }
     }
 },
