@@ -1,3 +1,52 @@
 {"saves":{
-    "currentRoom":"test_00"
-}}
+    "currentRoom":"test_00",
+
+
+"characters":
+{"theosis":
+    {"attributes":
+        {"name":"Theosis",
+        "level":1,
+        "experience_current":0,
+        "experience_needed":100,
+        "health_max":100,
+        "health_current":100,
+        "mana_max":50,
+        "mana_current":50},
+    "stats":
+        {"strength":10,
+        "endurance":10,
+        "intelligence":10,
+        "charisma":10,
+        "speed":10
+        }
+    }
+},
+
+
+"containers":
+            {"region":
+                {"area":
+                    {"room":
+                        {"containers":[
+                            {"type":"chest",
+                            "locked":"yes",
+                            "items":[{
+                                "1":"dull knife",
+                                "2":"leather armor"
+                                }]
+                            },
+                            {"type":"dresser",
+                                "locked":"no",
+                            "items":[{
+                                "1":"cloth tunic",
+                                "2":"leather shoes"
+                                }]
+                            }]
+                        }
+                    }
+                }
+            }
+    
+        }
+}

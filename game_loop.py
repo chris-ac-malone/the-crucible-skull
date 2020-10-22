@@ -15,11 +15,18 @@ class GameLoop:
 
     __running = True
 
-    def save():
-        # TODO fill out save data function, write to json
+    def loadGame():
+        pass
+        # TODO fill out load data function
+        # currentRoom
+        # all characters, all attributes, all stats
+        # all event flags
 
-    # TODO loop() will potentially need parameters from the json files,
-    # looking more into this. 
+    def saveGame():
+        pass
+        # TODO fill out save game function, write to json
+
+    # TODO loop() will receive pre-populated objects
     def loop(self, currentRoom):
         while(self.__running == True):
         #Get room description
