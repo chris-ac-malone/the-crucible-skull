@@ -25,28 +25,26 @@
 
 
 "containers":
-            {"region":
-                {"area":
-                    {"room":
-                        {"containers":[
-                            {"type":"chest",
-                            "locked":"yes",
-                            "items":[{
-                                "1":"dull knife",
-                                "2":"leather armor"
-                                }]
-                            },
-                            {"type":"dresser",
-                                "locked":"no",
-                            "items":[{
-                                "1":"cloth tunic",
-                                "2":"leather shoes"
-                                }]
-                            }]
-                        }
-                    }
-                }
-            }
-    
+    {"room":
+        {"containers":[
+            {"cType":"chest",
+            "locked":"yes",
+            "items":[{
+                "0":"dull knife",
+                "1":"leather armor",
+                "2":"x",
+                "3":"x",
+                "4":"x"
+                }]
+            },
+            {"cType":"dresser",
+            "locked":"no",
+            "items":[{
+                "1":"cloth tunic",
+                "2":"leather shoes"
+                }]
+            }]
         }
+    }
+}
 }
