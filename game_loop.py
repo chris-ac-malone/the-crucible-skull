@@ -1,4 +1,5 @@
 import party_main as party
+import additional_functions as extra
 import json
 
 ####################################################
@@ -53,6 +54,7 @@ class GameLoop:
 
             ###This is a prototype of the prompy which will probably be in the world map class###
             prompt = input("> ")
+            extra.clear()
 
             ### define functions: navigation ###
 
@@ -63,7 +65,6 @@ class GameLoop:
                     print("You cannot currently reach this area")
                 else:
                     self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['north']
-                return self.currentRoom
 
             def go_south():
                 if(self.game_map_data['rooms'][self.currentRoom]['south']) == ('x'):
@@ -106,11 +107,14 @@ class GameLoop:
                     "south": go_south,
                     "east": go_east,
                     "west": go_west,
+                    "n": go_north,
+                    "s": go_south,
+                    "e": go_east,
+                    "w": go_west,
 
                     "unlock": unlock_test
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
-                currentRoom = func()
-                return currentRoom
+                func()
             
             processInput(prompt)

@@ -1,10 +1,8 @@
 import game_loop
 import player_main_attr as player
 import player_main_stats as stats
+import additional_functions
 import json
-
-###Testing rooms###
-running = True
 
 ###This will grab the current room from the save file, possibly the party's variable### 
 with open('save_files/defaultSave.json') as saveDataJson:
