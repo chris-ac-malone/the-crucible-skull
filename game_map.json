@@ -1,37 +1,37 @@
 {"rooms":{
-    "test_00":[{
+    "test_00":{
         "description":"This is the center testing room",
         "north":"test_north",
         "south":"test_south",
-        "east":"test_east",
+        "east":"l",
         "west":"test_west"
-        }],
-    "test_north":[{
+        },
+    "test_north":{
         "description":"This is the north testing room",
         "north":"x",
         "south":"test_00",
         "east":"x",
         "west":"x"
-        }],
-    "test_south":[{
+        },
+    "test_south":{
         "description":"This is the south testing room",
         "north":"test_00",
         "south":"x",
         "east":"x",
         "west":"x"
-        }],
-    "test_east":[{
+        },
+    "test_east":{
         "description":"This is the east testing room",
         "north":"x",
         "south":"x",
         "east":"x",
         "west":"test_00"
-        }],
-    "test_west":[{
+        },
+    "test_west":{
         "description":"This is the west testing room",
         "north":"x",
         "south":"x",
         "east":"test_00",
         "west":"x"
-        }]
+        }
 }}

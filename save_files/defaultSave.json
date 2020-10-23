@@ -40,7 +40,7 @@
 
 
 "containers":
-    {"room":
+    {"test_00":
         {"containers":[
             {"cType":"chest",
             "locked":"yes",
@@ -60,6 +60,12 @@
                 }]
             }]
         }
+    },
+
+"events":
+    {"test_00":{
+        "east_door_locked":"True"
+        }
     }
-}
-}
+
+}}
