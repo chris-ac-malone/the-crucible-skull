@@ -9,11 +9,20 @@ import json
 ####################################################
 
 class GameLoop:
-    def __init__(self):
-        # TODO Might load the latest save file here
+    def __init__(self, currentRoom):
+        self.currentRoom = currentRoom
         pass
 
     __running = True
+
+    with open('game_map.json') as game_map_data_json:
+        game_map_data = json.load(game_map_data_json)
+        game_map_data_json.close()
+
+
+    f = open('game_map.json',)
+    game_map_data = json.load(f)
+    f.close()
 
     # loadGame() will load all of the save date from the json and create objects
     # for them. 
@@ -30,103 +39,78 @@ class GameLoop:
         # TODO fill out save game function, write to json
 
     # TODO loop() will receive pre-populated objects
-    def loop(self, currentRoom):
+    def loop(self):
         ### TODO I think loadGame() will go here, before the loop, so
         ### we don't have to pass every single class as a parameter
         ### of the loop function, but they're all here. 
         while(self.__running == True):
         #Get room description
-            with open('game_map.json') as game_map_data_json:
-                game_map_data = json.load(game_map_data_json)
-                game_map_data_json.close()
+            #with open('game_map.json') as game_map_data_json:
+            #    game_map_data = json.load(game_map_data_json)
+            #    game_map_data_json.close()
             ###Display Decription of currentRoom###
-            print(game_map_data['rooms'][currentRoom]['description'])
+            print(self.game_map_data['rooms'][self.currentRoom]['description'])
 
             ###This is a prototype of the prompy which will probably be in the world map class###
             prompt = input("> ")
-#            if(prompt == "north"):
-#                if(game_map_data['rooms'][currentRoom]['north']) == ('x'):
-#                    print("There is nothing to the north")
-#                elif(game_map_data['rooms'][currentRoom]['north']) == ('l'):
-#                    print("You cannot currently reach this area")
-#                else:
-#                    currentRoom = game_map_data['rooms'][currentRoom]['north']
-#            elif(prompt == "south"):
-#                if(game_map_data['rooms'][currentRoom]['south']) == ('x'):
-#                    print("There is nothing to the south")
-#                elif(game_map_data['rooms'][currentRoom]['south']) == ('l'):
-#                    print("You cannot currently reach this area")
-#                else:
-#                    currentRoom = game_map_data['rooms'][currentRoom]['south']
-#            elif(prompt == "east"):
-#                if(game_map_data['rooms'][currentRoom]['east']) == ('x'):
-#                    print("There is nothing to the east")
-#                elif(game_map_data['rooms'][currentRoom]['east']) == ('l'):
-#                    print("You cannot currently reach this area")
-#                else:
-#                    currentRoom = game_map_data['rooms'][currentRoom]['east']
-#            elif(prompt == "west"):
-#                if(game_map_data['rooms'][currentRoom]['west']) == ('x'):
-#                    print("There is nothing to the west")
-#                elif(game_map_data['rooms'][currentRoom]['west']) == ('l'):
-#                    print("You cannot currently reach this area")
-#                else:
-#                    currentRoom = game_map_data['rooms'][currentRoom]['west']
-#            elif(prompt == "unlock"):
-#                pass
 
+            ### define functions: navigation ###
 
-            #################################################
-            ########### Testing switch statement ############
-            #################################################
-            def go_north(currentRoom):
-                if(game_map_data['rooms'][currentRoom]['north']) == ('x'):
+            def go_north():
+                if(self.game_map_data['rooms'][self.currentRoom]['north']) == ('x'):
                     print("There is nothing to the north")
-                elif(game_map_data['rooms'][currentRoom]['north']) == ('l'):
+                elif(self.game_map_data['rooms'][self.currentRoom]['north']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    currentRoom = game_map_data['rooms'][currentRoom]['north']
-                return currentRoom
+                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['north']
+                return self.currentRoom
 
-            def go_south(currentRoom):
-                if(game_map_data['rooms'][currentRoom]['south']) == ('x'):
+            def go_south():
+                if(self.game_map_data['rooms'][self.currentRoom]['south']) == ('x'):
                     print("There is nothing to the south")
-                elif(game_map_data['rooms'][currentRoom]['south']) == ('l'):
+                elif(self.game_map_data['rooms'][self.currentRoom]['south']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    currentRoom = game_map_data['rooms'][currentRoom]['south']
-                return currentRoom
+                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['south']
+                return self.currentRoom
 
-            def go_east(currentRoom):
-                if(game_map_data['rooms'][currentRoom]['east']) == ('x'):
+            def go_east():
+                if(self.game_map_data['rooms'][self.currentRoom]['east']) == ('x'):
                     print("There is nothing to the east")
-                elif(game_map_data['rooms'][currentRoom]['east']) == ('l'):
+                elif(self.game_map_data['rooms'][self.currentRoom]['east']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    currentRoom = game_map_data['rooms'][currentRoom]['east']
-                return currentRoom
+                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['east']
+                return self.currentRoom
 
-            def go_west(currentRoom):
-                if(game_map_data['rooms'][currentRoom]['west']) == ('x'):
+            def go_west():
+                if(self.game_map_data['rooms'][self.currentRoom]['west']) == ('x'):
                     print("There is nothing to the west")
-                elif(game_map_data['rooms'][currentRoom]['west']) == ('l'):
+                elif(self.game_map_data['rooms'][self.currentRoom]['west']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    currentRoom = game_map_data['rooms'][currentRoom]['west']
-                return currentRoom
+                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['west']
+                return self.currentRoom
 
+            def unlock_test():
+                print(self.game_map_data['rooms']['test_00']['east'])
+                self.game_map_data['rooms']['test_00']['east'] = 'test_east'
+                print(self.game_map_data['rooms']['test_00']['east'])
+                return self.currentRoom
 
+            ### Process Input ###
 
-
-            def processInput(prompt, currentRoom):
+            def processInput(prompt):
                 switch = {
                     "north": go_north,
                     "south": go_south,
                     "east": go_east,
-                    "west": go_west
+                    "west": go_west,
+
+                    "unlock": unlock_test
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
-                currentRoom = func(currentRoom)
+                currentRoom = func()
                 return currentRoom
             
-            currentRoom = processInput(prompt, currentRoom)
+            processInput(prompt)
