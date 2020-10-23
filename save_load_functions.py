@@ -15,6 +15,10 @@ s = open('save_files/defaultSave.json',)
 saveData = json.load(s)
 s.close()
 
+def write_to_json(gameLoop):
+    with open('game_map.json', 'w') as gm:
+        json.dump(gameLoop.game_map_data, gm)
+
 def loadTheosys():
     theosys = player_main_attr.PlayerAttr
 

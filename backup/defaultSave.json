@@ -1,0 +1,155 @@
+{"saves":{
+    "currentRoom":"test_00",
+
+"party":{
+    "current":
+        {"slot_1":"theosys",
+        "slot_2":"x",
+        "slot_3":"x",
+        "slot_4":"x"},
+
+    "reserves":
+        {"slot_1":"x",
+        "slot_2":"x",
+        "slot_3":"x",
+        "slot_4":"x",
+        "slot_5":"x",
+        "slot_6":"x",
+        "slot_7":"x",
+        "slot_8":"x",
+        "slot_9":"x",
+        "slot_10":"x",
+        "slot_11":"x",
+        "slot_12":"x"},
+
+    "inventory":[
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x"
+    ]
+},
+
+"characters":
+{"theosys":
+    {"attributes":
+        {"name":"Theosys Test",
+        "level":1,
+        "experience_current":0,
+        "experience_needed":100,
+        "health_max":100,
+        "health_current":100,
+        "mana_max":50,
+        "mana_current":50},
+    "stats":
+        {"strength":10,
+        "endurance":10,
+        "intelligence":10,
+        "charisma":10,
+        "speed":10
+        },
+    "equipment":
+        {"head":"x",
+        "torso":"x",
+        "arms":"linen wraps",
+        "legs":"trousers",
+        "lHand":"x",
+        "rHand":"x"
+        },
+    "inventory":
+        {"0":"small potion",
+        "1":"x",
+        "2":"x",
+        "3":"x",
+        "4":"x"
+        }
+    }
+},
+
+
+"containers":
+    {"test_00":
+        {"containers":[
+            {"cType":"chest",
+            "locked":"yes",
+            "items":[{
+                "0":"dull knife",
+                "1":"leather armor",
+                "2":"x",
+                "3":"x",
+                "4":"x"
+                }]
+            },
+            {"cType":"dresser",
+            "locked":"no",
+            "items":[{
+                "1":"cloth tunic",
+                "2":"leather shoes"
+                }]
+            }]
+        }
+    },
+
+"events":
+    {"test_00":{
+        "east_door_locked":"True"
+        }
+    }
+
+}}

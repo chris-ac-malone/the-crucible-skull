@@ -34,8 +34,8 @@ class GameLoop:
         theosys = slf.loadTheosys()
         theosys.debugDisplay(theosys)
 
-    def saveGame():
-        pass
+    def saveGame(self):
+        slf.write_to_json(self)
         # TODO fill out save game function, write to json
 
     # TODO loop() will receive pre-populated objects
@@ -111,6 +111,8 @@ class GameLoop:
                     "s": go_south,
                     "e": go_east,
                     "w": go_west,
+
+                    "save": self.saveGame,
 
                     "unlock": unlock_test
                 }
