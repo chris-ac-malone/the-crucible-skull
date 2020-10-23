@@ -1,5 +1,6 @@
 import party_main as party
 import additional_functions as extra
+import save_load_functions as slf
 import json
 
 ####################################################
@@ -27,13 +28,11 @@ class GameLoop:
 
     # loadGame() will load all of the save date from the json and create objects
     # for them. 
-    def loadGame():
-        with open('defaultSave.json') as save_data_json:
+    def loadGame(self):
+        with open('save_files/defaultSave.json') as save_data_json:
             saveData = json.load(save_data_json)
-        # TODO fill out load data function
-        # currentRoom
-        # all characters, all attributes, all stats
-        # all event flags
+        theosys = slf.loadTheosys()
+        theosys.debugDisplay(theosys)
 
     def saveGame():
         pass
@@ -41,6 +40,7 @@ class GameLoop:
 
     # TODO loop() will receive pre-populated objects
     def loop(self):
+        self.loadGame()
         ### TODO I think loadGame() will go here, before the loop, so
         ### we don't have to pass every single class as a parameter
         ### of the loop function, but they're all here. 

@@ -2,7 +2,7 @@ import player_main_stats as stats
 
 class PlayerAttr:
     ###Constructor###
-    def __init__(self, name, level):
+    def __init__(self):
         self.name = name
         self.level = level
 
@@ -60,4 +60,14 @@ class PlayerAttr:
     # def setPlayerStats(self...)
 
     def debugDisplay(self):
-        print(self.name, self.level)
+        print("Name: " + self.getName(self))
+        print("Level: " + str(self.getLevel(self)))
+        print("Exp: " + str(self.getExpCurrent(self)) + "/" + str(self.getExpNeed(self)))
+        print("HP: " + str(self.getHealthCurrent(self)) + "/" + str(self.getHealthMax(self)))
+        print("MP: " + str(self.getManaCurrent(self)) + "/" + str(self.getManaMax(self)) + "\n")
+
+        print("Str: " + str(self.getPlayerStats(self).getStrength()))
+        print("End: " + str(self.getPlayerStats(self).getEndurance()))
+        print("Int: " + str(self.getPlayerStats(self).getIntelligence()))
+        print("Chr: " + str(self.getPlayerStats(self).getCharisma()))
+        print("Spd: " + str(self.getPlayerStats(self).getSpeed()))

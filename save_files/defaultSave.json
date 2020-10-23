@@ -3,9 +3,9 @@
 
 
 "characters":
-{"theosis":
+{"theosys":
     {"attributes":
-        {"name":"Theosis",
+        {"name":"Theosys Test",
         "level":1,
         "experience_current":0,
         "experience_needed":100,
@@ -29,7 +29,7 @@
         "rHand":"x"
         },
     "inventory":
-        {"0":"x",
+        {"0":"small potion",
         "1":"x",
         "2":"x",
         "3":"x",
