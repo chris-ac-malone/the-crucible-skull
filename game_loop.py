@@ -26,6 +26,10 @@ class GameLoop:
     game_map_data = json.load(f)
     f.close()
 
+    s = open('save_files/defaultSave.json',)
+    save_data = json.load(s)
+    s.close()
+
     # loadGame() will load all of the save date from the json and create objects
     # for them. 
     def loadGame(self):
@@ -99,6 +103,17 @@ class GameLoop:
                 print(self.game_map_data['rooms']['test_00']['east'])
                 return self.currentRoom
 
+            def item_list():
+                n = 0
+                for (v) in self.save_data['saves']['characters']['theosys']['inventory']:
+                    if(v != "x"):
+                        print(str(n) + ": " + v)
+                    n += 1
+                #print(self.save_data['saves']['characters']['theosys']['inventory']["0"])
+
+            def item_test():
+                pass
+
             ### Process Input ###
 
             def processInput(prompt):
@@ -114,7 +129,11 @@ class GameLoop:
 
                     "save": self.saveGame,
 
-                    "unlock": unlock_test
+                    "unlock": unlock_test,
+
+                    "item list": item_list,
+
+                    "item test": item_test
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
                 func()

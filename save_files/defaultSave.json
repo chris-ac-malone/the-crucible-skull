@@ -113,12 +113,9 @@
         "rHand":"x"
         },
     "inventory":
-        {"0":"small potion",
-        "1":"x",
-        "2":"x",
-        "3":"x",
-        "4":"x"
-        }
+        ["small potion",
+        "small potion"
+        ]
     }
 },
 
