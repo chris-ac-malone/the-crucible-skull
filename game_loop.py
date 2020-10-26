@@ -40,7 +40,6 @@ class GameLoop:
 
     def saveGame(self):
         slf.write_to_json(self)
-        # TODO fill out save game function, write to json
 
     # TODO loop() will receive pre-populated objects
     def loop(self):
