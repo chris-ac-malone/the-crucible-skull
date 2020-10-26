@@ -109,10 +109,27 @@ class GameLoop:
                     if(v != "x"):
                         print(str(n) + ": " + v)
                     n += 1
+                return n
                 #print(self.save_data['saves']['characters']['theosys']['inventory']["0"])
 
-            def item_test():
-                pass
+            def use_item():
+                # TODO ask which character from party
+                n = item_list() - 1
+                consumed_item = input("Which item? > ")
+                consumed_item = consumed_item.strip()
+                if not consumed_item:
+                    print("Invalid entry")
+                elif(consumed_item.isdigit() == True):
+                    if(int(consumed_item) > n) or (int(consumed_item) < 0):
+                        print("Invalid entry")
+                    else:
+                        # TODO Manage item effects, possibly in the additional functions file
+                        self.save_data['saves']['characters']['theosys']['inventory'].pop(int(consumed_item))
+                else:
+                    print("Invalid entry")
+
+            def debug_give_item():
+                self.save_data['saves']['characters']['theosys']['inventory'].append("magic amulet")
 
             ### Process Input ###
 
@@ -133,7 +150,9 @@ class GameLoop:
 
                     "item list": item_list,
 
-                    "item test": item_test
+                    "use item": use_item,
+
+                    "give item": debug_give_item
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
                 func()
