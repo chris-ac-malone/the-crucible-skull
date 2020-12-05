@@ -1,4 +1,4 @@
-import party_main as party
+import party_main
 import additional_functions as extra
 import save_load_functions as slf
 import json
@@ -35,8 +35,9 @@ class GameLoop:
     def loadGame(self):
         with open('save_files/defaultSave.json') as save_data_json:
             saveData = json.load(save_data_json)
-        theosys = slf.loadTheosys()
-        theosys.debugDisplay(theosys)
+        self.party = party_main.Party()
+        self.party.theosys.debugDisplay(self.party.theosys)
+        extra.print_list(self.party.theosys_inventory)
 
     def saveGame(self):
         slf.write_to_json(self)
@@ -44,9 +45,6 @@ class GameLoop:
     # TODO loop() will receive pre-populated objects
     def loop(self):
         self.loadGame()
-        ### TODO I think loadGame() will go here, before the loop, so
-        ### we don't have to pass every single class as a parameter
-        ### of the loop function, but they're all here. 
         while(self.__running == True):
         #Get room description
             #with open('game_map.json') as game_map_data_json:
@@ -103,11 +101,20 @@ class GameLoop:
                 return self.currentRoom
 
             def item_list():
-                n = 0
-                for (v) in self.save_data['saves']['characters']['theosys']['inventory']:
-                    if(v != "x"):
-                        print(str(n) + ": " + v)
-                    n += 1
+                print("0: Party\n1: Party Member\n2: Reserves")
+                prompt = input("Which group? > ")
+                path = ""
+                if(prompt == '0'):
+                    n = 0
+                    extra.print_list(self.party.party_inventory)
+                elif(prompt == '1'):
+                    n = 0
+                    extra.print_list_party_members(self.party.party_members)
+                    prompt = input("which party member?")
+                #for (v) in self.save_data['saves']['characters']['theosys']['inventory']:
+                #    if(v != "x"):
+                #        print(str(n) + ": " + v)
+                #    n += 1
                 return n
                 #print(self.save_data['saves']['characters']['theosys']['inventory']["0"])
 
@@ -151,7 +158,9 @@ class GameLoop:
 
                     "use item": use_item,
 
-                    "give item": debug_give_item
+                    "give item": debug_give_item,
+
+                    "help": extra.print_help
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
                 func()

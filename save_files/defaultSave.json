@@ -3,10 +3,7 @@
 
 "party":{
     "current":
-        {"slot_1":"theosys",
-        "slot_2":"x",
-        "slot_3":"x",
-        "slot_4":"x"},
+        ["theosys"],
 
     "reserves":
         [],

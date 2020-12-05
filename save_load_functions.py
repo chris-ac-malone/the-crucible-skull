@@ -1,8 +1,7 @@
 #import container
 #import room
-#import party_main
+import party_main
 import player_main_attr
-#import player_main_stats
 #import item
 
 import json
@@ -18,6 +17,9 @@ s.close()
 def write_to_json(gameLoop):
     with open('game_map.json', 'w') as gm:
         json.dump(gameLoop.game_map_data, gm, indent=4)
+
+def loadParty():
+    party = party_main.Party()
 
 def loadTheosys():
     theosys = player_main_attr.PlayerAttr
