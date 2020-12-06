@@ -1,5 +1,5 @@
 import game_loop
-import player_main_attr as player
+import player
 # import player_main_stats as stats
 import additional_functions as extra
 import json

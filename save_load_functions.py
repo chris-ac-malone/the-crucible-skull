@@ -1,7 +1,7 @@
 #import container
 #import room
 import party_main
-import player_main_attr
+import player
 #import item
 
 import json
@@ -25,7 +25,7 @@ def loadParty():
     party = party_main.Party()
 
 def load_theosys():
-    theosys = player_main_attr.PlayerAttr()
+    theosys = player.PlayerAttr()
 
     theosys.setName(saveData['saves']['characters']['theosys']['attributes']['name'])
     theosys.setLevel(saveData['saves']['characters']['theosys']['attributes']['level'])
@@ -44,7 +44,7 @@ def load_theosys():
     return theosys
 
 def load_sideline_steve():
-    sideline_steve = player_main_attr.PlayerAttr()
+    sideline_steve = player.PlayerAttr()
 
     sideline_steve.setName(saveData['saves']['characters']['sideline steve']['attributes']['name'])
     sideline_steve.setLevel(saveData['saves']['characters']['sideline steve']['attributes']['level'])

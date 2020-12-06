@@ -1,5 +1,5 @@
 import json
-import player_main_attr
+import player
 import save_load_functions as slf
 
 # Selected Save Test

@@ -1,5 +1,3 @@
-# import player_main_attr as stats
-
 ###Player Stats###
 
 class PlayerStats:
