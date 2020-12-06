@@ -17,15 +17,6 @@ class GameLoop:
 
     __running = True
 
-    with open('game_map.json') as game_map_data_json:
-        game_map_data = json.load(game_map_data_json)
-        game_map_data_json.close()
-
-
-    f = open('game_map.json',)
-    game_map_data = json.load(f)
-    f.close()
-
     s = open('save_files/defaultSave.json',)
     save_data = json.load(s)
     s.close()
@@ -46,12 +37,8 @@ class GameLoop:
     def loop(self):
         self.loadGame()
         while(self.__running == True):
-        #Get room description
-            #with open('game_map.json') as game_map_data_json:
-            #    game_map_data = json.load(game_map_data_json)
-            #    game_map_data_json.close()
             ###Display Decription of currentRoom###
-            print(self.game_map_data['rooms'][self.currentRoom]['description'])
+            print(self.save_data['saves']['rooms'][self.currentRoom]['description'])
 
             ###This is a prototype of the prompy which will probably be in the world map class###
             prompt = input("> ")
@@ -60,44 +47,44 @@ class GameLoop:
             ### define functions: navigation ###
 
             def go_north():
-                if(self.game_map_data['rooms'][self.currentRoom]['north']) == ('x'):
+                if(self.save_data['saves']['rooms'][self.currentRoom]['north']) == ('x'):
                     print("There is nothing to the north")
-                elif(self.game_map_data['rooms'][self.currentRoom]['north']) == ('l'):
+                elif(self.save_data['saves']['rooms'][self.currentRoom]['north']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['north']
+                    self.currentRoom = self.save_data['saves']['rooms'][self.currentRoom]['north']
 
             def go_south():
-                if(self.game_map_data['rooms'][self.currentRoom]['south']) == ('x'):
+                if(self.save_data['saves']['rooms'][self.currentRoom]['south']) == ('x'):
                     print("There is nothing to the south")
-                elif(self.game_map_data['rooms'][self.currentRoom]['south']) == ('l'):
+                elif(self.save_data['saves']['rooms'][self.currentRoom]['south']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['south']
+                    self.currentRoom = self.save_data['saves']['rooms'][self.currentRoom]['south']
                 return self.currentRoom
 
             def go_east():
-                if(self.game_map_data['rooms'][self.currentRoom]['east']) == ('x'):
+                if(self.save_data['saves']['rooms'][self.currentRoom]['east']) == ('x'):
                     print("There is nothing to the east")
-                elif(self.game_map_data['rooms'][self.currentRoom]['east']) == ('l'):
+                elif(self.save_data['saves']['rooms'][self.currentRoom]['east']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['east']
+                    self.currentRoom = self.save_data['saves']['rooms'][self.currentRoom]['east']
                 return self.currentRoom
 
             def go_west():
-                if(self.game_map_data['rooms'][self.currentRoom]['west']) == ('x'):
+                if(self.save_data['saves']['rooms'][self.currentRoom]['west']) == ('x'):
                     print("There is nothing to the west")
-                elif(self.game_map_data['rooms'][self.currentRoom]['west']) == ('l'):
+                elif(self.save_data['saves']['rooms'][self.currentRoom]['west']) == ('l'):
                     print("You cannot currently reach this area")
                 else:
-                    self.currentRoom = self.game_map_data['rooms'][self.currentRoom]['west']
+                    self.currentRoom = self.save_data['saves']['rooms'][self.currentRoom]['west']
                 return self.currentRoom
 
             def unlock_test():
-                print(self.game_map_data['rooms']['test_00']['east'])
-                self.game_map_data['rooms']['test_00']['east'] = 'test_east'
-                print(self.game_map_data['rooms']['test_00']['east'])
+                print(self.save_data['saves']['rooms']['test_00']['east'])
+                self.save_data['saves']['rooms']['test_00']['east'] = 'test_east'
+                print(self.save_data['saves']['rooms']['test_00']['east'])
                 return self.currentRoom
 
             def item_list():

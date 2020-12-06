@@ -6,17 +6,17 @@ import player_main_attr
 
 import json
 
-m = open('game_map.json',)
-game_map_data = json.load(m)
-m.close()
+# m = open('game_map.json',)
+# game_map_data = json.load(m)
+# m.close()
 
 s = open('save_files/defaultSave.json',)
 saveData = json.load(s)
 s.close()
 
 def write_to_json(gameLoop):
-    with open('game_map.json', 'w') as gm:
-        json.dump(gameLoop.game_map_data, gm, indent=4)
+    with open('default_save.json', 'w') as save_dump:
+        json.dump(gameLoop.game_map_data, save_dump, indent=4)
 
 def loadParty():
     party = party_main.Party()
