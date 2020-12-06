@@ -96,13 +96,22 @@ class GameLoop:
                 if(prompt == '0'):
                     n = 0
                     extra.print_list(self.party.party_inventory)
+
+                    input("Continue")
+                    extra.clear()
                 elif(prompt == '1'):
                     n = 0
                     extra.print_list_party_members(self.party.party_members)
                     prompt = input("which party member?")
+
+                    input("Press enter")
+                    extra.clear()
                 elif(prompt == '2'):
                     n = 0
                     extra.print_list_party_reserves(self.party.party_reserves)
+
+                    input("Press enter")
+                    extra.clear()
 
             def use_item():
                 # TODO ask which character from party
@@ -123,8 +132,31 @@ class GameLoop:
             def debug_give_item():
                 self.save_data['saves']['characters']['theosys']['inventory'].append("magic amulet")
 
-            def battle_loop():
+            def battle_loop(player_party, enemy_party):
                 pass
+                '''
+                initialize
+                set up speed meters to 0
+
+                battle = True
+                while(battle == True):
+                    loop party members:
+                        check speed meter
+                        if speed meter > 100 and battle == True:
+                            turn
+                            speed meter = 0
+                        else:
+                            increase speed meter by speed
+                    loop enemies:
+                        check speed meter
+                        if speed meter > 100 and battle == True:
+                            turn
+                            speed meter = 0
+                        else:
+                            increase speed meter by speed
+                
+                return player_party?
+                '''
 
 
             ### Process Input ###
@@ -150,7 +182,9 @@ class GameLoop:
 
                     "give item": debug_give_item,
 
-                    "help": extra.print_help
+                    "help": extra.print_help,
+
+                    "battle": battle_loop
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
                 func()

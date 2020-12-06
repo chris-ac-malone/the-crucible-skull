@@ -1,4 +1,41 @@
-import player_main_stats as stats
+# import player_main_attr as stats
+
+###Player Stats###
+
+class PlayerStats:
+    ###Member Variables###
+    __strength = 0
+    __endurance = 0
+    __intelligence = 0
+    __charisma = 0
+    __speed = 0
+
+    ###Member Methods###
+    def getStrength(self):
+        return self.__strength
+    def setStrength(self, newStrength):
+        self.__strength = newStrength
+
+    def getEndurance(self):
+        return self.__endurance
+    def setEndurance(self, newEndurance):
+        self.__endurance = newEndurance
+
+    def getIntelligence(self):
+        return self.__intelligence
+    def setIntelligence(self, newIntelligence):
+        self.__intelligence = newIntelligence
+
+    def getCharisma(self):
+        return self.__charisma
+    def setCharisma(self, newCharisma):
+        self.__charisma = newCharisma
+
+    def getSpeed(self):
+        return self.__speed
+    def setSpeed(self, newSpeed):
+        self.__speed = newSpeed
+
 
 class PlayerAttr:
     ###Member Variables###
@@ -10,7 +47,7 @@ class PlayerAttr:
     healthCurrent = 0
     __manaMax = 0
     manaCurent = 0
-    __playerStats = stats.PlayerStats()
+    __playerStats = PlayerStats()
 
     ###Methods###
     def getName(self):
@@ -66,3 +103,5 @@ class PlayerAttr:
         print("Int: " + str(self.getPlayerStats().getIntelligence()))
         print("Chr: " + str(self.getPlayerStats().getCharisma()))
         print("Spd: " + str(self.getPlayerStats().getSpeed()))
+
+
