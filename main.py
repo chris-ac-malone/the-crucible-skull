@@ -34,25 +34,31 @@ hide_cursor()
 selected_save = "testSave"
 
 ###This will grab the current room from the save file, possibly the party's variable### 
-with open(f'save_files/{selected_save}.json') as saveDataJson:
-    saveData = json.load(saveDataJson)
-    saveDataJson.close()
-currentRoom = saveData["saves"]["currentRoom"]
+def set_current_room():
+    with open(f'save_files/{selected_save}.json') as saveDataJson:
+        saveData = json.load(saveDataJson)
+        saveDataJson.close()
+    current_room = saveData["saves"]["currentRoom"]
+    return current_room
 
-columns = shutil.get_terminal_size().columns
+def introduction():
+    columns = shutil.get_terminal_size().columns
+    lines = shutil.get_terminal_size().lines
+    middle = int(lines/2-1)
 
-extra.clear()
-print("\n\n\n\n")
-print("Blood Mountain Studios presents:".center(columns))
-time.sleep(2)
-extra.clear()
-print("\n\n\n\n")
-print("The Crucible Skull".center(columns))
-time.sleep(2.5)
-extra.clear()
+    extra.clear()
+    print("\n" * middle)
+    print("Blood Mountain Studios presents:".center(columns))
+    time.sleep(2.5)
+    extra.clear()
+    print("\n" * middle)
+    print("The Crucible Skull".center(columns))
+    time.sleep(2.5)
+    extra.clear()
 
+introduction()
 
-run = game_loop.GameLoop(currentRoom)
+run = game_loop.GameLoop(set_current_room())
 
 ''' Music test '''
 # pygame.mixer.pre_init(44100, 16, 2, 4096) #frequency, size, channels, buffersize
