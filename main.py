@@ -1,7 +1,7 @@
 import game_loop
 import player
 # import player_main_stats as stats
-import additional_functions as extra
+import extra_functions as extra
 import json
 import pygame
 

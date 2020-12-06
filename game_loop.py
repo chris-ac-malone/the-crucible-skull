@@ -1,5 +1,5 @@
 import party_main
-import additional_functions as extra
+import extra_functions as extra
 import save_load_functions as slf
 import json
 
