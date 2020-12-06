@@ -132,7 +132,8 @@ class GameLoop:
 
             def debug_give_item():
                 self.save_data['saves']['characters']['theosys']['inventory'].append("magic amulet")
-
+                
+            # TODO: Finish the battle loop basics
             def battle_loop(player_party, enemy_party):
                 print(player_party.party_members[0].getName())
                 print(enemy_party.enemy_list[0].enemy_id)

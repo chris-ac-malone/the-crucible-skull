@@ -2,6 +2,7 @@
 
 class PlayerStats:
     ###Member Variables###
+    # TODO: I think I ned to add current values for ach of these for status effects
     __strength = 0
     __endurance = 0
     __intelligence = 0
