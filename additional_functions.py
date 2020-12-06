@@ -19,7 +19,12 @@ def print_list_party_members(printed_list_party_members):
     n = 0
     for (x) in printed_list_party_members:
         print(str(n) + ": " + x.getName(x))
-        #print(str(n) + ": " + x.getName(printed_list_party_members[x]))
+        n += 1
+
+def print_list_party_reserves(printed_list_party_reserves):
+    n = 0
+    for (x) in printed_list_party_reserves:
+        print(str(n) + ": " + x.getName(x))
         n += 1
 
 def print_help():

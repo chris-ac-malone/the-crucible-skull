@@ -6,7 +6,10 @@
         ["theosys"],
 
     "reserves":
-        [],
+        ["sideline steve"],
+
+    "inactive":
+        ["invisible steve"],
 
     "inventory":[
         "iron shortsword"
@@ -18,7 +21,67 @@
 "characters":
 {"theosys":
     {"attributes":
-        {"name":"Theosys Test",
+        {"name":"Theosys",
+        "level":1,
+        "experience_current":0,
+        "experience_needed":100,
+        "health_max":100,
+        "health_current":100,
+        "mana_max":50,
+        "mana_current":50},
+    "stats":
+        {"strength":10,
+        "endurance":10,
+        "intelligence":10,
+        "charisma":10,
+        "speed":10
+        },
+    "equipment":
+        {"head":"x",
+        "torso":"x",
+        "arms":"linen wraps",
+        "legs":"trousers",
+        "lHand":"x",
+        "rHand":"x"
+        },
+    "inventory":
+        ["small potion",
+        "large potion"
+        ]
+    },
+    "sideline steve":
+    {"attributes":
+        {"name":"Sideline Steve",
+        "level":1,
+        "experience_current":0,
+        "experience_needed":100,
+        "health_max":100,
+        "health_current":100,
+        "mana_max":50,
+        "mana_current":50},
+    "stats":
+        {"strength":10,
+        "endurance":10,
+        "intelligence":10,
+        "charisma":10,
+        "speed":10
+        },
+    "equipment":
+        {"head":"x",
+        "torso":"x",
+        "arms":"linen wraps",
+        "legs":"trousers",
+        "lHand":"x",
+        "rHand":"x"
+        },
+    "inventory":
+        ["small potion",
+        "large potion"
+        ]
+    },
+    "invisible steve":
+    {"attributes":
+        {"name":"Invisible Steve",
         "level":1,
         "experience_current":0,
         "experience_needed":100,

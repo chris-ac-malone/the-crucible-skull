@@ -24,7 +24,7 @@ def write_to_json(gameLoop):
 def loadParty():
     party = party_main.Party()
 
-def loadTheosys():
+def load_theosys():
     theosys = player_main_attr.PlayerAttr
 
     theosys.setName(theosys, saveData['saves']['characters']['theosys']['attributes']['name'])
@@ -42,3 +42,22 @@ def loadTheosys():
     theosys.getPlayerStats(theosys).setCharisma(saveData['saves']['characters']['theosys']['stats']['charisma'])
     theosys.getPlayerStats(theosys).setSpeed(saveData['saves']['characters']['theosys']['stats']['speed'])
     return theosys
+
+def load_sideline_steve():
+    sideline_steve = player_main_attr.PlayerAttr
+
+    sideline_steve.setName(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['name'])
+    sideline_steve.setLevel(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['level'])
+    sideline_steve.setExpCurrent(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['experience_current'])
+    sideline_steve.setExpNeed(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['experience_needed'])
+    sideline_steve.setHealthCurrent(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['health_current'])
+    sideline_steve.setHealthMax(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['health_max'])
+    sideline_steve.setManaCurrent(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['mana_current'])
+    sideline_steve.setManaMax(sideline_steve, saveData['saves']['characters']['sideline steve']['attributes']['mana_max'])
+
+    sideline_steve.getPlayerStats(sideline_steve).setStrength(saveData['saves']['characters']['sideline steve']['stats']['strength'])
+    sideline_steve.getPlayerStats(sideline_steve).setEndurance(saveData['saves']['characters']['sideline steve']['stats']['endurance'])
+    sideline_steve.getPlayerStats(sideline_steve).setIntelligence(saveData['saves']['characters']['sideline steve']['stats']['intelligence'])
+    sideline_steve.getPlayerStats(sideline_steve).setCharisma(saveData['saves']['characters']['sideline steve']['stats']['charisma'])
+    sideline_steve.getPlayerStats(sideline_steve).setSpeed(saveData['saves']['characters']['sideline steve']['stats']['speed'])
+    return sideline_steve

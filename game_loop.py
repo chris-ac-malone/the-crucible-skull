@@ -100,12 +100,9 @@ class GameLoop:
                     n = 0
                     extra.print_list_party_members(self.party.party_members)
                     prompt = input("which party member?")
-                #for (v) in self.save_data['saves']['characters']['theosys']['inventory']:
-                #    if(v != "x"):
-                #        print(str(n) + ": " + v)
-                #    n += 1
-                return n
-                #print(self.save_data['saves']['characters']['theosys']['inventory']["0"])
+                elif(prompt == '2'):
+                    n = 0
+                    extra.print_list_party_reserves(self.party.party_reserves)
 
             def use_item():
                 # TODO ask which character from party
