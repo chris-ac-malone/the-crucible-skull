@@ -29,7 +29,7 @@ class GameLoop:
         with open(f'save_files/{selected_save}.json') as save_data_json:
             saveData = json.load(save_data_json)
         self.party = party_main.Party()
-        self.party.theosys.debugDisplay(self.party.theosys)
+        self.party.theosys.debugDisplay()
         extra.print_list(self.party.theosys_inventory)
 
     def saveGame(self):
@@ -144,7 +144,7 @@ class GameLoop:
 
                     "unlock": unlock_test,
 
-                    "item list": item_list,
+                    "items": item_list,
 
                     "use item": use_item,
 

@@ -1,13 +1,8 @@
 import player_main_stats as stats
 
 class PlayerAttr:
-    ###Constructor###
-    def __init__(self):
-        self.name = name
-        self.level = level
-
     ###Member Variables###
-    __name = "Theosys"
+    __name = "Default"
     __level = 0
     __expCurrent = 0
     __expNeed = 0
@@ -60,14 +55,14 @@ class PlayerAttr:
     # def setPlayerStats(self...)
 
     def debugDisplay(self):
-        print("Name: " + self.getName(self))
-        print("Level: " + str(self.getLevel(self)))
-        print("Exp: " + str(self.getExpCurrent(self)) + "/" + str(self.getExpNeed(self)))
-        print("HP: " + str(self.getHealthCurrent(self)) + "/" + str(self.getHealthMax(self)))
-        print("MP: " + str(self.getManaCurrent(self)) + "/" + str(self.getManaMax(self)) + "\n")
+        print("Name: " + self.getName())
+        print("Level: " + str(self.getLevel()))
+        print("Exp: " + str(self.getExpCurrent()) + "/" + str(self.getExpNeed()))
+        print("HP: " + str(self.getHealthCurrent()) + "/" + str(self.getHealthMax()))
+        print("MP: " + str(self.getManaCurrent()) + "/" + str(self.getManaMax()) + "\n")
 
-        print("Str: " + str(self.getPlayerStats(self).getStrength()))
-        print("End: " + str(self.getPlayerStats(self).getEndurance()))
-        print("Int: " + str(self.getPlayerStats(self).getIntelligence()))
-        print("Chr: " + str(self.getPlayerStats(self).getCharisma()))
-        print("Spd: " + str(self.getPlayerStats(self).getSpeed()))
+        print("Str: " + str(self.getPlayerStats().getStrength()))
+        print("End: " + str(self.getPlayerStats().getEndurance()))
+        print("Int: " + str(self.getPlayerStats().getIntelligence()))
+        print("Chr: " + str(self.getPlayerStats().getCharisma()))
+        print("Spd: " + str(self.getPlayerStats().getSpeed()))

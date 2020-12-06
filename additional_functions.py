@@ -18,18 +18,18 @@ def print_list(printed_list):
 def print_list_party_members(printed_list_party_members):
     n = 0
     for (x) in printed_list_party_members:
-        print(str(n) + ": " + x.getName(x))
+        print(str(n) + ": " + x.getName())
         n += 1
 
 def print_list_party_reserves(printed_list_party_reserves):
     n = 0
     for (x) in printed_list_party_reserves:
-        print(str(n) + ": " + x.getName(x))
+        print(str(n) + ": " + x.getName())
         n += 1
 
 def print_help():
     print(f"Move: north, south, east, west, n, s, e, w")
     print(f"Check Party: ")
-    print(f"Check Inventory: item list")
+    print(f"Check Inventory: items")
     print(f"Save Game: save")
     print(f"Load Game: load")
