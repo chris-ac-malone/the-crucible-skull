@@ -3,7 +3,7 @@ import player
 import save_load_functions as slf
 
 # Selected Save Test
-selected_save = "testSave"
+selected_save = "file1"
 
 ####################################################
 # Party is where the party members, individual
@@ -42,10 +42,8 @@ class Party:
         else:
             pass
 
-    # TODO Party members will be populated with PlayerAttr objects
-    # by iterating through the corresponding save data.
-    # I'm hoping I can dynmically create party members for in-game
-    # additions. reserves will also be populated with objects. 
+    def get_party_members(self):
+        return self.party_members
 
     party_inventory = save_data['saves']['party']['inventory']
     theosys_inventory = save_data['saves']['characters']['theosys']['inventory']

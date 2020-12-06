@@ -8,6 +8,7 @@ class PlayerStats:
     __intelligence = 0
     __charisma = 0
     __speed = 0
+    speed_meter = 0
 
     ###Member Methods###
     def getStrength(self):

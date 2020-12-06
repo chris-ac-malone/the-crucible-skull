@@ -1,29 +1,25 @@
-#import container
-#import room
 import party_main
 import player
-#import item
-
 import json
 
 # Selected Save Test
-selected_save = "testSave"
+selected_save = "file1"
 
-# m = open('game_map.json',)
-# game_map_data = json.load(m)
-# m.close()
-
+# Open the save file and keep it in the variable 'saveData'
 s = open(f'save_files/{selected_save}.json',)
 saveData = json.load(s)
 s.close()
 
+# Writes the data to the save file
 def write_to_json(gameLoop):
     with open('default_save.json', 'w') as save_dump:
         json.dump(gameLoop.game_map_data, save_dump, indent=4)
 
+# Loads the party, eg. list of party in each group
 def loadParty():
     party = party_main.Party()
 
+# Loads each of the party members
 def load_theosys():
     theosys = player.PlayerAttr()
 

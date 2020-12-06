@@ -5,7 +5,7 @@ import enemy_party as ep
 import json
 
 # Selected Save Test
-selected_save = "testSave"
+selected_save = "file1"
 ####################################################
 # GameLoop is where all of the navigation will take
 # place, loading the map data and beginning other
@@ -30,8 +30,7 @@ class GameLoop:
         with open(f'save_files/{selected_save}.json') as save_data_json:
             saveData = json.load(save_data_json)
         self.party = party_main.Party()
-        self.party.theosys.debugDisplay()
-        extra.print_list(self.party.theosys_inventory)
+        extra.clear()
 
     def saveGame(self):
         slf.write_to_json(self)
@@ -135,13 +134,11 @@ class GameLoop:
                 
             # TODO: Finish the battle loop basics
             def battle_loop(player_party, enemy_party):
-                print(player_party.party_members[0].getName())
-                print(enemy_party.enemy_list[0].enemy_id)
-                input("test")
+                for party_member in player_party.get_party_members():
+                    print(f"{party_member.getName()}: {party_member.getHealthCurrent()}/{party_member.getHealthMax()}")
+                for enemy in enemy_party.get_enemy_list():
+                    print(f"{enemy.get_name()}: {enemy.get_current_hp()}/{enemy.get_hp()}")
                 '''
-                initialize
-                set up speed meters to 0
-
                 battle = True
                 while(battle == True):
                     loop party members:
@@ -161,10 +158,13 @@ class GameLoop:
                 
                 return player_party?
                 '''
-
+                input("Wait")
             def random_battle():
                 enemy_party = ep.EnemyParty()
                 battle_loop(self.party, enemy_party)
+            
+            def quit_game():
+                quit()
 
 
             ### Process Input ###
@@ -192,7 +192,9 @@ class GameLoop:
 
                     "help": extra.print_help,
 
-                    "battle": random_battle
+                    "battle": random_battle,
+
+                    "quit": quit_game
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
                 func()
