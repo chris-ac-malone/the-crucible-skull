@@ -1,0 +1,36 @@
+{
+    "enemies":{
+        "goblin":{
+            "hp":10,
+            "strength":2,
+            "endurance":2,
+            "intelligence":1,
+            "charisma":1,
+            "speed":13,
+            "attacks":[
+                "scratch",
+                "bite"
+            ]
+        }
+    },
+
+    "attacks":{
+        "scratch":{
+            "strength":1,
+            "likelyhood":0,
+            "type":"default",
+            "accuracy":85,
+            "description":"none",
+            "range":1
+        },
+        "bite":{
+            "strength":4,
+            "likelyhood":50,
+            "type":"standard",
+            "accuracy":"80",
+            "description":"none",
+            "range":1
+        }
+    }
+
+}

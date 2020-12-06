@@ -1,6 +1,7 @@
 import party_main
 import extra_functions as extra
 import save_load_functions as slf
+import enemy_party as ep
 import json
 
 # Selected Save Test
@@ -133,7 +134,9 @@ class GameLoop:
                 self.save_data['saves']['characters']['theosys']['inventory'].append("magic amulet")
 
             def battle_loop(player_party, enemy_party):
-                pass
+                print(player_party.party_members[0].getName())
+                print(enemy_party.enemy_list[0].enemy_id)
+                input("test")
                 '''
                 initialize
                 set up speed meters to 0
@@ -157,6 +160,10 @@ class GameLoop:
                 
                 return player_party?
                 '''
+
+            def random_battle():
+                enemy_party = ep.EnemyParty()
+                battle_loop(self.party, enemy_party)
 
 
             ### Process Input ###
@@ -184,7 +191,7 @@ class GameLoop:
 
                     "help": extra.print_help,
 
-                    "battle": battle_loop
+                    "battle": random_battle
                 }
                 func = switch.get(prompt, lambda: "Invalid Input")
                 func()
