@@ -6,11 +6,14 @@ import player_main_attr
 
 import json
 
+# Selected Save Test
+selected_save = "testSave"
+
 # m = open('game_map.json',)
 # game_map_data = json.load(m)
 # m.close()
 
-s = open('save_files/defaultSave.json',)
+s = open(f'save_files/{selected_save}.json',)
 saveData = json.load(s)
 s.close()
 

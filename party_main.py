@@ -1,6 +1,10 @@
 import json
 import player_main_attr
 import save_load_functions as slf
+
+# Selected Save Test
+selected_save = "testSave"
+
 ####################################################
 # Party is where the party members, individual
 # inventory, and party inventory will be stored. 
@@ -14,7 +18,7 @@ class Party:
 
     party_members = []
 
-    f = open('save_files/defaultSave.json',)
+    f = open(f'save_files/{selected_save}.json',)
     save_data = json.load(f)
     f.close()
 

@@ -3,6 +3,8 @@ import additional_functions as extra
 import save_load_functions as slf
 import json
 
+# Selected Save Test
+selected_save = "testSave"
 ####################################################
 # GameLoop is where all of the navigation will take
 # place, loading the map data and beginning other
@@ -17,14 +19,14 @@ class GameLoop:
 
     __running = True
 
-    s = open('save_files/defaultSave.json',)
+    s = open(f'save_files/{selected_save}.json',)
     save_data = json.load(s)
     s.close()
 
     # loadGame() will load all of the save date from the json and create objects
     # for them. 
     def loadGame(self):
-        with open('save_files/defaultSave.json') as save_data_json:
+        with open(f'save_files/{selected_save}.json') as save_data_json:
             saveData = json.load(save_data_json)
         self.party = party_main.Party()
         self.party.theosys.debugDisplay(self.party.theosys)
@@ -123,6 +125,10 @@ class GameLoop:
 
             def debug_give_item():
                 self.save_data['saves']['characters']['theosys']['inventory'].append("magic amulet")
+
+            def battle_loop():
+                pass
+
 
             ### Process Input ###
 
